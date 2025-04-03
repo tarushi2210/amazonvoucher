@@ -1,0 +1,93 @@
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Vouchers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .voucher-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: auto;
+        }
+        .voucher-card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+        .voucher-code {
+            font-family: monospace;
+            font-size: 1.2em;
+            background: #eee;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 5px 0;
+        }
+        .copy-btn {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .copy-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Amazon Vouchers</h1>
+    <div class="voucher-container">
+        <div class="voucher-card">
+            <h2>Amazon Voucher</h2>
+            <p>Value: ₹4000</p>
+            <p>Expiry: 2025-12-31</p>
+            <span class="voucher-code" id="code1">AMZ12345</span>
+            <button class="copy-btn" onclick="copyToClipboard('code1')">Copy</button>
+        </div>
+        <div class="voucher-card">
+            <h2>Amazon Voucher</h2>
+            <p>Value: ₹8000</p>
+            <p>Expiry: 2025-11-30</p>
+            <span class="voucher-code" id="code2">AMZ67890</span>
+            <button class="copy-btn" onclick="copyToClipboard('code2')">Copy</button>
+        </div>
+        <div class="voucher-card">
+            <h2>Amazon Voucher</h2>
+            <p>Value: ₹2000</p>
+            <p>Expiry: 2025-10-15</p>
+            <span class="voucher-code" id="code3">AMZ54321</span>
+            <button class="copy-btn" onclick="copyToClipboard('code3')">Copy</button>
+        </div>
+        <div class="voucher-card">
+            <h2>Amazon Voucher</h2>
+            <p>Value: ₹6000</p>
+            <p>Expiry: 2025-09-25</p>
+            <span class="voucher-code" id="code4">AMZ09876</span>
+            <button class="copy-btn" onclick="copyToClipboard('code4')">Copy</button>
+        </div>
+    </div>
+    <script>
+        function copyToClipboard(id) {
+            var codeText = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(codeText)
+                .then(() => alert("Voucher code copied: " + codeText))
+                .catch(err => console.error("Failed to copy: ", err));
+        }
+    </script>
+</body>
+</html>
